@@ -21,6 +21,7 @@ export class AppComponent {
       postalCode: new FormControl()
     })
   });
+  //Load data for all 
   loadApiData(){
     this.registrationForm.setValue({
       name:'Ashok',
@@ -31,6 +32,16 @@ export class AppComponent {
         city:'Indore',
         postalCode:'410001'
       }
+    });
+
+  }
+  //Load only requered data
+  loadPartialApiData(){
+    this.registrationForm.patchValue({
+      name:'Ashok',
+      userEmail:'Ashok@impetus.co.in',
+      password:'123',
+      confirmPassword:'123'
     });
 
   }
