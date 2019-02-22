@@ -4,7 +4,15 @@
   <form action="" [formGroup]='registrationForm'>
     <div class="form-group">
       <label for="name">Name:</label>
-      <input type="text" class="form-control" placeholder="Name" formControlName='name'>
+      <input [class.is-invalid]="name.invalid &&
+                                name.touched"
+        type="text" class="form-control" placeholder="Name" formControlName='name'>
+      <!-- <small [class.d-none]="name.valid || 
+                            name.untouched" class="text-danger">Name is required</small> -->
+      <div *ngIf="name.invalid && name.touched">
+        <small *ngIf="name.errors?.required" class="text-danger">Name is required</small>
+        <small *ngIf="name.errors?.minlength" class="text-danger">Name must be at least 4 characters</small>
+      </div>
     </div>
     <div formGroupName='address'>
       <div class="form-group">
@@ -34,8 +42,9 @@
     <hr>
     <div class="row">
       <div class="col-sm-2 "><button type="submit" class="btn btn-primary">Submit Data </button></div>
-      <div class="col-sm-2"><button type="button" (click)="loadApiData()" class="btn btn-primary">Load API Data</button></div> 
-      <div class="col-sm-2"><button type="button" (click)="loadPartialApiData()" class="btn btn-primary">Load Partial API Data</button></div>      
+      <div class="col-sm-2"><button type="button" (click)="loadApiData()" class="btn btn-primary">Load API Data</button></div>
+      <div class="col-sm-2"><button type="button" (click)="loadPartialApiData()" class="btn btn-primary">Load Partial
+          API Data</button></div>
     </div>
 
 
