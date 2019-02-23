@@ -1,41 +1,47 @@
 <router-outlet></router-outlet>
-<div class="container">
+<div class="container-fluid">
   <h2>Registration Form</h2>
   <form action="" [formGroup]='registrationForm'>
     <div class="form-group">
-      <label for="name">Name:</label>
+      <label>Name:</label>
       <input type="text" class="form-control" placeholder="Name" formControlName='name'>
     </div>
     <div formGroupName='address'>
       <div class="form-group">
-        <label for="city">City:</label>
+        <label>City:</label>
         <input type="text" class="form-control" placeholder="City" formControlName='city'>
       </div>
       <div class="form-group">
-        <label for="postalCode">Postal Code:</label>
+        <label>Postal Code:</label>
         <input type="text" class="form-control" placeholder="Postal Code" formControlName='postalCode'>
       </div>
     </div>
     <div class="form-group">
-      <label for="email">Email:</label>
+      <label>Email:</label>
       <input type="email" class="form-control" placeholder="Enter email" formControlName='userEmail'>
     </div>
     <div class="form-group">
-      <label for="pwd">Password:</label>
+      <label>Password:</label>
       <input type="password" class="form-control" placeholder="Enter password" formControlName='password'>
     </div>
     <div class="form-group">
-      <label for="pwd">Confirme Password:</label>
+      <label>Confirme Password:</label>
       <input type="password" class="form-control" placeholder="Enter confirme password" formControlName='confirmPassword'>
     </div>
     <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
+      <label>
+        <input type="checkbox" name="remember"> Remember me</label>
     </div>
     <div class="row">
-      <div class="col-sm-1"><button type="submit" class="btn btn-primary">Submit</button></div>
-      <div class="col-sm-1"><button type="button" (click)="loadApiData()" class="btn btn-primary">Load API Data</button></div>      
+      <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" (click)="loadApiData()" class="btn btn-primary">Load API Data</button>
+      </div>
+      <div class="col-sm-2">
+        <button type="button" (click)="loadPartialApiData()" class="btn btn-primary">Load Partial API Data</button>
+      </div>
     </div>
-
-
   </form>
 </div>
