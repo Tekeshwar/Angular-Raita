@@ -4,7 +4,11 @@
   <form action="" [formGroup]='registrationForm'>
     <div class="form-group">
       <label>Name:</label>
-      <input type="text" class="form-control" placeholder="Name" formControlName='name'>
+      <input type="text" class="text-danger form-control" placeholder="Name" formControlName='name'>
+      <div *ngIf="name.invalid && name.touched">
+        <small class="text-danger" *ngIf="name.errors?.required">name is required</small>
+        <small class="text-danger" *ngIf="name.errors?.minlength">name must be at least 3 characters</small>
+      </div>
     </div>
     <div formGroupName='address'>
       <div class="form-group">
@@ -13,7 +17,10 @@
       </div>
       <div class="form-group">
         <label>Postal Code:</label>
-        <input type="text" class="form-control" placeholder="Postal Code" formControlName='postalCode'>
+        <input #postalCode type="text" class="form-control" placeholder="Postal Code" formControlName='postalCode'>       
+        <div *ngIf="postalCode.invalid && postalCode.touched">
+          <small *ngIf="postalCode.invalid"> Invalid postal code</small>
+        </div>
       </div>
     </div>
     <div class="form-group">

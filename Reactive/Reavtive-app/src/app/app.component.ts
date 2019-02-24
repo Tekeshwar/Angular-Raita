@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import {postalCodeValidator} from './validator';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent {
     confirmPassword: [''],
     address: this.fb.group({
       city: [''],
-      postalCode: ['']
+      postalCode: ['', postalCodeValidator]
     })
   });
 
