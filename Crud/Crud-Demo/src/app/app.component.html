@@ -1,18 +1,50 @@
 <div class="container-fluid">
     <form>
-        <div class="form-group">
-            <h4>Your Registration Form</h4>
-            <hr>
-            <div class="row">
-                <div class="col-md-6">
-                    <label>User name</label>
-                    <input type="text" formControlName="userName" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label>User name</label>
-                    <input type="text" formControlName="userEmail" class="form-control">
-                </div>
+        <h4>Youser Registration Form</h4>
+        <hr>
+        
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>User name</label>
+                <input type="text" formControlName="userName" class="form-control">
             </div>
+            <div class="col-md-6 form-group">
+                <label>Email</label>
+                <input type="text" formControlName="userEmail" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>Mobile No.</label>
+                <input type="text" formControlName="mobile" class="form-control">
+            </div>
+            <div class="col-md-3 form-group">
+                <label>Interest in</label>
+                <br>
+                <select style="width:100%; height: 35px;">
+                    <option formControlName="intrestIn" class="form-control" value="">Angular</option>
+                    <option formControlName="intrestIn" class="form-control" value="">React Js</option>
+                    <option formControlName="intrestIn" class="form-control" value="">Python</option>
+                </select>
+            </div>
+            <div class="col-md-3 form-group">
+                <label>DOB</label>
+                <input type="text" formControlName="dob" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label>Password</label>
+                <input type="text" formControlName="password" class="form-control">
+            </div>
+            <div class="col-md-6 form-group">
+                <label>Confirm Password</label>
+                <input type="text" formControlName="cnfPassword" class="form-control">
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-primary">Submit</button>
         </div>
     </form>
 </div>
